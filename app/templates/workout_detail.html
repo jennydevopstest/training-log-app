@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ workout.title }} | Träningslogg{% endblock %}
+{% block content %}
+  <h2>{{ workout.title }}</h2>
+  <p><strong>Datum:</strong> {{ workout.workout_date }}</p>
+  {% if workout.duration_min %}
+    <p><strong>Duration:</strong> {{ workout.duration_min }} min</p>
+  {% endif %}
+  {% if workout.notes %}
+    <p><strong>Noteringar:</strong><br/>{{ workout.notes }}</p>
+  {% endif %}
+{% endblock %}

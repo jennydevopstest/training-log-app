@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Hem | Träningslogg{% endblock %}
+{% block content %}
+  <h2>Pass</h2>
+
+  {% if workouts|length == 0 %}
+    <p>Inga pass ännu. <a href="{{ url_for('workouts.new_workout') }}">Skapa ditt första</a>.</p>
+  {% else %}
+    {% for w in workouts %}
+      <div class="card">
+        <h3>
+          <a href="{{ url_for('workouts.workout_detail', workout_id=w.id) }}">{{ w.title }}</a>
+        </h3>
+        <p>
+          <strong>Datum:</strong> {{ w.workout_date }}
+          {% if w.duration_min %}
+            · <strong>Duration:</strong> {{ w.duration_min }} min
+          {% endif %}
+        </p>
+        {% if w.notes %}
+          <p><small class="muted">{{ w.notes }}</small></p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

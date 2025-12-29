@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Nytt pass | Träningslogg{% endblock %}
+{% block content %}
+  <h2>Nytt träningspass</h2>
+
+  <form method="post" action="{{ url_for('workouts.create_workout') }}">
+    <label>Titel *</label>
+    <input name="title" placeholder="T.ex. Löpning, Gym ben, Yoga" required />
+
+    <label>Datum</label>
+    <input name="workout_date" type="date" value="{{ today }}" />
+
+    <label>Duration (min)</label>
+    <input name="duration_min" type="number" min="0" placeholder="45" />
+
+    <label>Noteringar</label>
+    <textarea name="notes" rows="4" placeholder="T.ex. intervaller 6x400m"></textarea>
+
+    <button type="submit">Spara</button>
+  </form>
+{% endblock %}
