@@ -9,8 +9,8 @@
       header { display:flex; gap:1rem; align-items:baseline; }
       nav a { margin-right: 1rem; }
       .flash { padding: .75rem 1rem; border-radius: 6px; margin: 1rem 0; }
-      .flash.success { background: #e8fff0; border: 1px solid #b7f0c8; }
-      .flash.error { background: #ffecec; border: 1px solid #ffbcbc; }
+      .flash.success { background: #cd85d6; border: 1px solid #560666; }
+      .flash.error { background: #e40707; border: 1px solid #834747; }
       .card { border: 1px solid #ddd; padding: 1rem; border-radius: 8px; margin: .75rem 0; }
       label { display:block; margin-top: .75rem; }
       input, textarea { width: 100%; padding: .5rem; }
@@ -24,6 +24,7 @@
       <nav>
         <a href="{{ url_for('workouts.index') }}">Hem</a>
         <a href="{{ url_for('workouts.new_workout') }}">Nytt pass</a>
+        <a href="{{ url_for('workouts.index') }}">Planerade pass (To-Do!)</a>
       </nav>
     </header>
 
