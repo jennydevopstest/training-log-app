@@ -36,7 +36,11 @@ def create_workout():
     workouts.append(workout)
     save_workouts(workouts)
 
+<<<<<<< HEAD
     flash("Träningspass sparat:", "success")
+=======
+    flash("Träningspass sparat.", "success")
+>>>>>>> main
     return redirect(url_for("workouts.index"))
 
 
